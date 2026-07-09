@@ -4740,7 +4740,7 @@ Apakah Anda yakin ingin melanjutkan proses kenaikan kelas untuk ${students.lengt
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {/* Book/Surah Field */}
                           <div className="space-y-1.5">
-                            <label className="text-[10px] md:text-xs font-black uppercase text-slate-700 block">Kitab / Surat Al-Qur'an:</label>
+                            <label className="text-[10px] md:text-xs font-black uppercase text-slate-700 block">Materi / Surat Al-Qur'an:</label>
                             <input
                               type="text"
                               value={temp.materiTambahan}
@@ -8219,15 +8219,15 @@ Apakah Anda yakin ingin melanjutkan proses kenaikan kelas untuk ${students.lengt
                     <span className="text-[10px] text-indigo-650 font-black uppercase tracking-wider">*Klik angka cell pada matriks di bawah ini untuk drilldown/melihat rincian santri.</span>
                   </div>
 
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-center border-collapse text-xs font-mono border-2 border-slate-900">
+                  <div className="overflow-auto max-h-[70vh] border-2 border-slate-900 relative">
+                    <table className="w-full text-center border-collapse text-xs font-mono">
                       <thead>
-                        <tr className="bg-slate-900 border-2 border-slate-900 text-white uppercase font-black text-[10px]">
-                          <th className="py-3 px-3 text-left w-56 font-bold text-white">Tingkat Capaian (Row Category)</th>
+                        <tr className="text-white uppercase font-black text-[10px]">
+                          <th className="sticky top-0 z-10 bg-slate-900 py-3 px-3 text-left w-56 font-bold text-white shadow-[inset_0_-2px_0_rgba(15,23,42,1)]">Tingkat Capaian (Row Category)</th>
                           {dynamicClasses.map(kls => (
-                            <th key={kls} className="py-3 px-1.5 w-12 text-white font-bold">{kls}</th>
+                            <th key={kls} className="sticky top-0 z-10 bg-slate-900 py-3 px-1.5 w-12 text-white font-bold shadow-[inset_0_-2px_0_rgba(15,23,42,1)]">{kls}</th>
                           ))}
-                          <th className="py-3 px-3 w-16 bg-yellow-300 text-slate-900 font-black">TOTAL</th>
+                          <th className="sticky top-0 z-10 bg-yellow-300 py-3 px-3 w-16 text-slate-900 font-black shadow-[inset_0_-2px_0_rgba(15,23,42,1)]">TOTAL</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-200">
