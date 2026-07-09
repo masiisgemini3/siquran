@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Student details tracking Quran progress",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nipd": { "type": "string" },
+        "nisn": { "type": "string" },
+        "name": { "type": "string" },
+        "class": { "type": "string" },
+        "level": { "type": "string" },
+        "pageDetail": { "type": "string" },
+        "materiTambahan": { "type": "string" },
+        "asatidz": { "type": "string" },
+        "shift": { "type": "integer" },
+        "naikTingkatThisMonth": { "type": "boolean" },
+        "gender": { "type": "string" },
+        "historyLevel": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "tahsinPencapaian": { "type": "string" },
+        "tahsinKeterangan": { "type": "string" },
+        "tahfizhPencapaian": { "type": "string" },
+        "tahfizhKeterangan": { "type": "string" },
+        "tahsinNilai": { "type": "integer" },
+        "tahfizhNilai": { "type": "integer" },
+        "materiTambahanNilai": { "type": "integer" }
+      },
+      "required": ["id", "nipd", "name", "class", "level", "asatidz", "shift", "gender"]
+    },
+    "Teacher": {
+      "title": "Teacher",
+      "description": "Profile info for the Ustadz/ah",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "gender": { "type": "string" },
+        "phone": { "type": "string" },
+        "status": { "type": "string" },
+        "specialty": { "type": "string" },
+        "experience": { "type": "string" },
+        "linkedEmail": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "Log": {
+      "title": "Log",
+      "description": "Activity log entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "user": { "type": "string" },
+        "action": { "type": "string" },
+        "details": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "user", "action", "details"]
+    },
+    "Config": {
+      "title": "Config",
+      "description": "System options and configurations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "classes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "levels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id"]
+    }
+  },
+  "firestore": {
+    "students/{studentId}": {
+      "schema": "Student",
+      "description": "Primary students collection"
+    },
+    "teachers/{teacherId}": {
+      "schema": "Teacher",
+      "description": "Information about teachers"
+    },
+    "logs/{logId}": {
+      "schema": "Log",
+      "description": "System activity logs"
+    },
+    "configs/{configId}": {
+      "schema": "Config",
+      "description": "System configurations and dropdown options"
+    },
+    "graduated_students/{graduatedId}": {
+      "schema": "Student",
+      "description": "Graduated/archived students"
+    }
+  }
+}

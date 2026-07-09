@@ -1,0 +1,6 @@
+{
+  "name": "SiQuran",
+  "description": "Sistem Informasi Laporan Bulanan Capaian Al-Qur'an Santri",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

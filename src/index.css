@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@media print {
+  /* Hide all UI elements, navigation bars, buttons and sidebars */
+  header, nav, footer, button, select, input, textarea, .no-print, [role="tablist"], .sidebar-container, .top-header-container, .toast-container {
+    display: none !important;
+  }
+
+  /* Reset body styling for clean printing */
+  body {
+    background-color: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 11pt;
+  }
+
+  /* Force the printable report area to expand to 100% width and hide borders/shadows */
+  #printable-report-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+  }
+
+  /* Class for triggering a clean page break between report cards */
+  .page-break {
+    page-break-after: always;
+    break-after: page;
+    display: block;
+    clear: both;
+  }
+
+  /* Keep table rows and card content blocks from breaking in half across pages */
+  .avoid-break-inside {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Enable background colors and borders in printed output */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
